@@ -5,7 +5,7 @@ class BinarySearchWithSorted
 {
 // Returns index of x if it is present in arr[l..
 // r], else return -1
-int binarySearch(int arr[], int l, int r, int x)
+int binarySearch(int arr[], int l, int r, int find_x)
 {
    if (r>=l)
    {
@@ -13,17 +13,17 @@ int binarySearch(int arr[], int l, int r, int x)
 
        // If the element is present at the 
        // middle itself
-       if (arr[mid] == x)
+       if (arr[mid] == find_x)
           return mid;
 
        // If element is smaller than mid, then 
        // it can only be present in left subarray
-       if (arr[mid] > x)
-          return binarySearch(arr, l, mid-1, x);
+       if (arr[mid] > find_x)
+          return binarySearch(arr, l, mid-1, find_x);
 
        // Else the element can only be present
        // in right subarray
-       return binarySearch(arr, mid+1, r, x);
+       return binarySearch(arr, mid+1, r, find_x);
    }
 
    // We reach here when element is not present
